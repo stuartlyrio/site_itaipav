@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Vitrine de Delícias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>VITRINE DE SABORES</h1>
+        <p>Escolha seus favoritos e retire comigo</p>
+    </header>
+
+    <main class="vitrine-container">
+        
+        <section class="coluna">
+            <h2 class="titulo-cat">BISCOITOS</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                <div class="card" onclick="pedido('Biscoito Banana')">
+                    <span class="status pronta">Pronta Entrega</span>
+                    <img src="foto-biscoito.jpg" alt="Biscoitos">
+                    <p class="nome">Banana c/ Canela</p>
+                    <p class="preco">R$ 15,00</p>
+                </div>
+            </div>
+            <div class="seta">▼</div>
+        </section>
+
+        <section class="coluna">
+            <h2 class="titulo-cat">COMPOTAS</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                <div class="card" onclick="pedido('Doce de Leite')">
+                    <span class="status pronta">Pronta Entrega</span>
+                    <img src="foto-doce.jpg" alt="Compotas">
+                    <p class="nome">Doce de Leite</p>
+                    <p class="preco">R$ 22,00</p>
+                </div>
+            </div>
+            <div class="seta">▼</div>
+        </section>
+
+        <section class="coluna">
+            <h2 class="titulo-cat">CHOCOLATES</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                </div>
+            <div class="seta">▼</div>
+        </section>
+
+        <section class="coluna">
+            <h2 class="titulo-cat">PETISCOS</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                </div>
+            <div class="seta">▼</div>
+        </section>
+
+        <section class="coluna">
+            <h2 class="titulo-cat">DOCES</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                </div>
+            <div class="seta">▼</div>
+        </section>
+
+        <section class="coluna">
+            <h2 class="titulo-cat">OUTROS</h2>
+            <div class="seta">▲</div>
+            <div class="lista-itens">
+                </div>
+            <div class="seta">▼</div>
+        </section>
+
+    </main>
+
+    <script>
+        function pedido(item) {
+            const fone = "55XXXXXXXXXXX"; // COLOQUE SEU NUMERO AQUI
+            const msg = encodeURIComponent(`Olá! Gostaria de reservar o item: ${item}. Como faço para retirar?`);
+            window.open(`https://wa.me/${fone}?text=${msg}`);
+        }
+    </script>
+</body>
+</html>

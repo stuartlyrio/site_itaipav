@@ -1,0 +1,91 @@
+:root {
+    --verde-fundo: #1b3d2f;
+    --dourado: #d4a35d;
+    --bege-card: #e5b57d;
+    --linha: rgba(255, 255, 255, 0.4);
+}
+
+body {
+    background-color: var(--verde-fundo);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    overflow-x: auto; /* Permite scroll lateral no mobile */
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    border-bottom: 1px solid var(--dourado);
+}
+
+header h1 { font-size: 1.5rem; letter-spacing: 4px; color: var(--dourado); }
+
+.vitrine-container {
+    display: flex;
+    padding: 20px;
+    min-height: 80vh;
+    min-width: 1200px; /* Garante que as 6 colunas fiquem lado a lado */
+}
+
+.coluna {
+    flex: 1;
+    border-right: 1px solid var(--linha);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.coluna:last-child { border-right: none; }
+
+.titulo-cat {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+}
+
+.seta { color: var(--dourado); margin: 10px 0; font-size: 0.8rem; }
+
+.lista-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--bege-card);
+    border-radius: 20px;
+    padding: 12px;
+    color: var(--verde-fundo);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.status {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    background: #28a745;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+.nome { font-weight: bold; font-size: 0.85rem; margin: 5px 0; }
+.preco { font-weight: 900; font-size: 1rem; }
