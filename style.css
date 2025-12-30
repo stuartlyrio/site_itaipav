@@ -1,91 +1,157 @@
+/* Zerar margens para evitar bugs */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --verde-fundo: #1b3d2f;
     --dourado: #d4a35d;
     --bege-card: #e5b57d;
-    --linha: rgba(255, 255, 255, 0.4);
 }
 
 body {
     background-color: var(--verde-fundo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    overflow-x: auto; /* Permite scroll lateral no mobile */
+    /* Impede rolagem na página principal, a rolagem é só nas colunas */
+    overflow-x: hidden; 
 }
 
 header {
     text-align: center;
-    padding: 25px;
-    border-bottom: 1px solid var(--dourado);
-}
-
-header h1 { font-size: 1.5rem; letter-spacing: 4px; color: var(--dourado); }
-
-.vitrine-container {
-    display: flex;
     padding: 20px;
-    min-height: 80vh;
-    min-width: 1200px; /* Garante que as 6 colunas fiquem lado a lado */
+    border-bottom: 3px solid var(--dourado);
+    background-color: #142e23;
 }
 
+header h1 {
+    color: var(--dourado);
+    letter-spacing: 2px;
+}
+
+/* CONTAINER FLEXÍVEL (O Segredo das Colunas) */
+.vitrine-container {
+    display: flex; /* Coloca um ao lado do outro */
+    justify-content: flex-start; /* Começa da esquerda */
+    padding: 20px;
+    gap: 0;
+    overflow-x: auto; /* Permite rolar para o lado no celular */
+    min-height: 80vh;
+}
+
+/* CONFIGURAÇÃO DA COLUNA */
 .coluna {
-    flex: 1;
-    border-right: 1px solid var(--linha);
+    flex: 0 0 240px; /* Largura fixa da coluna */
+    border-right: 1px solid rgba(255,255,255,0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
-.coluna:last-child { border-right: none; }
+.coluna:last-child {
+    border-right: none;
+}
 
 .titulo-cat {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: white;
+    font-size: 1rem;
+    color: var(--dourado);
+    margin-bottom: 10px;
+    text-transform: uppercase;
     text-align: center;
 }
 
-.seta { color: var(--dourado); margin: 10px 0; font-size: 0.8rem; }
+/* JANELA MÁGICA (Só mostra 3 produtos) */
+/* CÁLCULO: Card (200px) + Gap (15px). 3 Cards = 630px aprox */
+.janela-carrossel {
+    height: 630px; 
+    width: 100%;
+    overflow: hidden; /* Esconde o que está fora */
+    position: relative;
+    border-radius: 10px;
+    scroll-behavior: smooth; /* Movimento suave */
+}
 
 .lista-itens {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    gap: 15px; /* Espaço entre os cards */
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
+/* O CARD DO PRODUTO */
 .card {
     background-color: var(--bege-card);
-    border-radius: 20px;
-    padding: 12px;
+    height: 200px; /* Altura fixa OBRIGATÓRIA */
+    border-radius: 15px;
+    padding: 10px;
     color: var(--verde-fundo);
     text-align: center;
     position: relative;
     cursor: pointer;
-    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.1s;
+}
+
+.card:active {
+    transform: scale(0.98);
 }
 
 .card img {
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 12px;
-    object-fit: cover;
-    margin-bottom: 8px;
+    height: 110px; /* Altura da imagem */
+    object-fit: contain; /* Ajusta a imagem sem cortar */
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.info-card {
+    margin-top: 5px;
+}
+
+.nome {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.preco {
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #0f241b;
 }
 
 .status {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 10px;
-    font-size: 0.6rem;
-    font-weight: bold;
-    background: #28a745;
+    background-color: #28a745;
     color: white;
-    padding: 2px 6px;
-    border-radius: 8px;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.nome { font-weight: bold; font-size: 0.85rem; margin: 5px 0; }
-.preco { font-weight: 900; font-size: 1rem; }
+/* BOTÕES SETAS */
+.seta {
+    background: none;
+    border: none;
+    color: var(--dourado);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.seta:hover {
+    color: white;
+    transform: scale(1.1);
+}

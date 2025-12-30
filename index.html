@@ -3,86 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Vitrine de Delícias</title>
+    <title>Vitrine Sabores Artesanais</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>VITRINE DE SABORES</h1>
-        <p>Escolha seus favoritos e retire comigo</p>
-    </header>
+<header>
+    <h1>SABORES ARTESANAIS</h1>
+    <p>Escolha seu favorito e peça pelo WhatsApp</p>
+</header>
 
-    <main class="vitrine-container">
+<main class="vitrine-container">
+
+    <section class="coluna">
+        <h2 class="titulo-cat">BISCOITOS</h2>
+        <button class="seta up">▲</button>
         
-        <section class="coluna">
-            <h2 class="titulo-cat">BISCOITOS</h2>
-            <div class="seta">▲</div>
+        <div class="janela-carrossel">
             <div class="lista-itens">
-                <div class="card" onclick="pedido('Biscoito Banana')">
-                    <span class="status pronta">Pronta Entrega</span>
-                    <img src="foto-biscoito.jpg" alt="Biscoitos">
-                    <p class="nome">Banana c/ Canela</p>
-                    <p class="preco">R$ 15,00</p>
+                <div class="card" onclick="pedido('Banana com Canela')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="banana.jpg" alt="Foto do Produto"> <div class="info-card">
+                        <p class="nome">Banana c/ Canela</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Casadinho 500g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="casadinho.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Casadinho 500g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Chocolate Branco')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="chocobranco.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Chocolate Branco</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Chocolate 500g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="chocolate.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Chocolate 500g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Choconata')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="choconata.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Choconata</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Leitinho')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="leitinho.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Leitinho</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Queijo 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="queijo.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Queijo 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Pizza 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="pizza.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Pizza 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Pimenta 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="pimenta.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Pimenta 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Churrasco 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="churrasco.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Churrasco 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Bacon 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="bacon.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Bacon 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
+                </div>
+
+                <div class="card" onclick="pedido('Camarão 400g')">
+                    <span class="status">Pronta Entrega</span>
+                    <img src="camarao.jpg" alt="Foto do Produto">
+                    <div class="info-card">
+                        <p class="nome">Camarão 400g</p>
+                        <p class="preco">R$ 22,00</p>
+                    </div>
                 </div>
             </div>
-            <div class="seta">▼</div>
-        </section>
+        </div>
+        
+        <button class="seta down">▼</button>
+    </section>
 
-        <section class="coluna">
-            <h2 class="titulo-cat">COMPOTAS</h2>
-            <div class="seta">▲</div>
+    <section class="coluna">
+        <h2 class="titulo-cat">COMPOTAS</h2>
+        <button class="seta up">▲</button>
+        <div class="janela-carrossel">
             <div class="lista-itens">
-                <div class="card" onclick="pedido('Doce de Leite')">
-                    <span class="status pronta">Pronta Entrega</span>
-                    <img src="foto-doce.jpg" alt="Compotas">
-                    <p class="nome">Doce de Leite</p>
-                    <p class="preco">R$ 22,00</p>
+                <div class="card">
+                    <img src="compota.jpg" alt="Exemplo">
+                    <div class="info-card">
+                        <p class="nome">Doce de Leite</p>
+                        <p class="preco">R$ 25,00</p>
+                    </div>
                 </div>
             </div>
-            <div class="seta">▼</div>
-        </section>
+        </div>
+        <button class="seta down">▼</button>
+    </section>
 
-        <section class="coluna">
-            <h2 class="titulo-cat">CHOCOLATES</h2>
-            <div class="seta">▲</div>
-            <div class="lista-itens">
-                </div>
-            <div class="seta">▼</div>
-        </section>
+    <section class="coluna">
+        <h2 class="titulo-cat">CHOCOLATES</h2>
+        <button class="seta up">▲</button>
+        <div class="janela-carrossel"><div class="lista-itens"></div></div>
+        <button class="seta down">▼</button>
+    </section>
 
-        <section class="coluna">
-            <h2 class="titulo-cat">PETISCOS</h2>
-            <div class="seta">▲</div>
-            <div class="lista-itens">
-                </div>
-            <div class="seta">▼</div>
-        </section>
+    <section class="coluna">
+        <h2 class="titulo-cat">PETISCOS</h2>
+        <button class="seta up">▲</button>
+        <div class="janela-carrossel"><div class="lista-itens"></div></div>
+        <button class="seta down">▼</button>
+    </section>
 
-        <section class="coluna">
-            <h2 class="titulo-cat">DOCES</h2>
-            <div class="seta">▲</div>
-            <div class="lista-itens">
-                </div>
-            <div class="seta">▼</div>
-        </section>
+    <section class="coluna">
+        <h2 class="titulo-cat">DOCES</h2>
+        <button class="seta up">▲</button>
+        <div class="janela-carrossel"><div class="lista-itens"></div></div>
+        <button class="seta down">▼</button>
+    </section>
 
-        <section class="coluna">
-            <h2 class="titulo-cat">OUTROS</h2>
-            <div class="seta">▲</div>
-            <div class="lista-itens">
-                </div>
-            <div class="seta">▼</div>
-        </section>
+    <section class="coluna">
+        <h2 class="titulo-cat">OUTROS</h2>
+        <button class="seta up">▲</button>
+        <div class="janela-carrossel"><div class="lista-itens"></div></div>
+        <button class="seta down">▼</button>
+    </section>
 
-    </main>
+</main>
 
-    <script>
-        function pedido(item) {
-            const fone = "55XXXXXXXXXXX"; // COLOQUE SEU NUMERO AQUI
-            const msg = encodeURIComponent(`Olá! Gostaria de reservar o item: ${item}. Como faço para retirar?`);
-            window.open(`https://wa.me/${fone}?text=${msg}`);
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
