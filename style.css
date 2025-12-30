@@ -16,7 +16,7 @@ body {
     background-color: var(--verde-fundo);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    overflow-x: hidden; /* Evita rolagem na página inteira, foco é nas colunas */
+    overflow-x: hidden;
 }
 
 header {
@@ -33,21 +33,21 @@ header h1 {
     margin-bottom: 5px;
 }
 
-/* === CONTAINER DAS COLUNAS (Centralizado) === */
+/* CONTAINER DAS COLUNAS (Centralizado) */
 .vitrine-container {
     display: flex;
-    justify-content: center; /* AQUI ESTÁ A MÁGICA: Centraliza tudo */
+    justify-content: center;
     align-items: flex-start;
     padding: 20px;
     gap: 0;
-    overflow-x: auto; /* Permite rolar para o lado se a tela for pequena */
+    overflow-x: auto;
     min-height: 80vh;
     width: 100%;
 }
 
 /* CONFIGURAÇÃO DA COLUNA */
 .coluna {
-    flex: 0 0 240px; /* Largura fixa da coluna */
+    flex: 0 0 250px; /* Aumentei um pouco a largura da coluna também */
     border-right: 1px solid var(--linha);
     display: flex;
     flex-direction: column;
@@ -68,12 +68,12 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* JANELA MÁGICA (Carrossel) */
-/* Altura exata para mostrar 3 cards de 200px + gaps de 15px */
+/* === JANELA DO CARROSSEL (CÁLCULO NOVO) === */
+/* Altura para 3 cards de 250px + gaps de 15px = Aprox 780px */
 .janela-carrossel {
-    height: 630px; 
+    height: 780px; /* AUMENTADO */
     width: 100%;
-    overflow: hidden; /* Esconde o que sobra */
+    overflow: hidden;
     position: relative;
     scroll-behavior: smooth;
     border-radius: 10px;
@@ -86,10 +86,10 @@ header h1 {
     padding: 5px 0;
 }
 
-/* O CARD DO PRODUTO */
+/* === O CARD DO PRODUTO (MAIOR) === */
 .card {
     background-color: var(--bege-card);
-    height: 200px; /* Altura fixa OBRIGATÓRIA para o JS funcionar */
+    height: 250px; /* AUMENTADO DE 200px PARA 250px */
     border-radius: 15px;
     padding: 10px;
     color: #1b3d2f;
@@ -107,11 +107,12 @@ header h1 {
     transform: scale(0.98);
 }
 
+/* === A IMAGEM (BEM MAIOR AGORA) === */
 .card img {
     width: 100%;
-    height: 110px;
-    object-fit: contain; /* Garante que a foto toda apareça */
-    background-color: rgba(255,255,255,0.4); /* Fundo suave atrás da foto */
+    height: 160px; /* AUMENTADO DE 110px PARA 160px */
+    object-fit: contain;
+    background-color: rgba(255,255,255,0.4);
     border-radius: 10px;
 }
 
@@ -119,19 +120,19 @@ header h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60px;
+    height: 65px; /* Ajuste leve na altura do texto */
 }
 
 .nome {
     font-weight: bold;
-    font-size: 0.85rem;
-    margin-bottom: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
     line-height: 1.1;
 }
 
 .preco {
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #0f241b;
 }
 
@@ -156,10 +157,10 @@ header h1 {
     background: none;
     border: none;
     color: var(--dourado);
-    font-size: 1.8rem;
+    font-size: 2rem; /* Setas um pouco maiores para acompanhar */
     cursor: pointer;
     padding: 0 10px;
-    margin: 5px 0;
+    margin: 8px 0;
     transition: transform 0.2s;
 }
 
