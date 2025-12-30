@@ -4,9 +4,9 @@ document.querySelectorAll('.coluna').forEach(coluna => {
     const btnUp = coluna.querySelector('.up');
     const btnDown = coluna.querySelector('.down');
     
-    // === CÁLCULO NOVO DO MOVIMENTO ===
     // Altura do Card (250px) + Gap do CSS (15px) = 265px
-    const step = 265; // ALTERADO DE 215 PARA 265
+    // Isso garante que ele pule exatamente 1 produto por vez
+    const step = 265; 
 
     function moverScroll(direcao) {
         if (!janela) return;
@@ -18,14 +18,10 @@ document.querySelectorAll('.coluna').forEach(coluna => {
         }
     }
 
-    if(btnUp) {
-        btnUp.addEventListener('click', () => moverScroll('up'));
-    }
-    
-    if(btnDown) {
-        btnDown.addEventListener('click', () => moverScroll('down'));
-    }
+    if(btnUp) btnUp.addEventListener('click', () => moverScroll('up'));
+    if(btnDown) btnDown.addEventListener('click', () => moverScroll('down'));
 
+    // Scroll com o Mouse (Rodinha)
     if(janela) {
         janela.addEventListener('wheel', (evento) => {
             evento.preventDefault(); 
@@ -38,7 +34,7 @@ document.querySelectorAll('.coluna').forEach(coluna => {
     }
 });
 
-// Função Global de Pedido (Não esqueça de verificar seu número aqui)
+// Função WhatsApp
 function pedido(nomeProduto) {
     const telefone = "5521999999999"; 
     const mensagem = `Olá! Gostaria de reservar o produto: *${nomeProduto}*. Como faço para retirar?`;
